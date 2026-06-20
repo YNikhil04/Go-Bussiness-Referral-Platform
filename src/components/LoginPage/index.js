@@ -18,11 +18,11 @@ export default function LoginPage() {
     }
   }, [navigate]);
 
-  //   const token = Cookies.get("jwt_token");
+  const token = Cookies.get("jwt_token");
 
-  //   if (token) {
-  //     <Navigate to="/" replace />;
-  //   }
+  if (token) {
+    <Navigate to="/" replace />;
+  }
 
   const validCrendiatls = (jwtToken) => {
     Cookies.set("jwt_token", jwtToken, {

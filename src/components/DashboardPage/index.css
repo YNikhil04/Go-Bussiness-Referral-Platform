@@ -1,0 +1,367 @@
+/* Base Layout Variables & Resets */
+.dashboard-layout {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.dashboard-layout *,
+.dashboard-layout *::before,
+.dashboard-layout *::after {
+  box-sizing: border-box;
+}
+
+/* 1. TOP NAVBAR */
+.dashboard-nav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-logo,
+.footer-logo {
+  font-weight: 700;
+  color: #5c5cee;
+  font-size: 20px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background-color: #5c5cee;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-logout {
+  background: none;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* MAIN CONTAINER WORKSPACE */
+.dashboard-main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex-grow: 1;
+}
+
+.main-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #0f172a;
+}
+
+.main-header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Shared White Container Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 20px 0;
+}
+
+/* 2. OVERVIEW GRID SETUP (8 CARDS) */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.overview-item {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f1f5f9;
+}
+
+.icon-badge {
+  background-color: #5c5cee;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.overview-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.overview-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* 3. SERVICE SUMMARY */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.summary-item {
+  flex: 1;
+  background-color: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.summary-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.highlight-blue {
+  color: #3b82f6;
+}
+
+/* 4. REFER FRIENDS FIELDS */
+.referral-inputs {
+  display: flex;
+  gap: 24px;
+}
+
+.input-field-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.copy-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.copy-wrapper input {
+  flex: 1;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #475569;
+  outline: none;
+}
+
+.btn-copy {
+  background-color: #5c5cee;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* 5. DATA TABLE SECTION */
+.table-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.table-header-controls .section-title {
+  margin-bottom: 0;
+}
+
+.table-filters {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.search-box label,
+.sort-box label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.search-box input,
+.sort-box select {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  outline: none;
+  color: #334155;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.referrals-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.referrals-table th {
+  background-color: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  letter-spacing: 0.5px;
+}
+
+.referrals-table td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table-profit-value {
+  color: #5c5cee !important;
+  font-weight: 600;
+}
+
+/* PAGINATION COMPONENT */
+.table-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.entries-text {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-page {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-page.text-btn {
+  width: auto;
+  padding: 0 12px;
+  font-weight: 500;
+  color: #64748b;
+  border: none;
+}
+
+.btn-page.active {
+  background-color: #5c5cee;
+  color: white;
+  border-color: #5c5cee;
+}
+
+/* 6. SYSTEM FOOTER */
+.dashboard-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 24px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links span {
+  cursor: pointer;
+}

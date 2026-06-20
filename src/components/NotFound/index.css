@@ -1,0 +1,56 @@
+.not-found-bg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ebf0f5;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.not-found-card-content {
+  text-align: center;
+  user-select: none;
+}
+
+.not-found-status-code {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b1528;
+  margin: 0 0 12px 0;
+  line-height: 1;
+}
+
+.not-found-message-text {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #334155;
+  margin: 0 0 14px 0;
+}
+
+.not-found-redirect-link {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6366f1;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.2s ease;
+}
+
+.not-found-redirect-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}

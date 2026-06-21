@@ -56,6 +56,11 @@ export default function DashboardPage() {
   const [referral, setReferral] = useState([]);
   const [tableData, setTableData] = useState([]);
 
+  const [searchInput, setSearchInput] = useState("");
+
+  // const [filterSearchData, setFilterSearchData] = useState(tableData);
+  const [activeInputElement, setActiveInputElemnt] = useState("");
+
   const jwtToken = Cookies.get("jwt_token");
   useEffect(() => {
     if (!jwtToken) {
@@ -104,6 +109,23 @@ export default function DashboardPage() {
     Cookies.remove("jwt_token");
     navigate("/login");
   };
+
+  const handleKetelemnt = (e) => {
+    if (e.key === "Enter") {
+      setActiveInputElemnt(searchInput);
+    }
+  };
+
+  const filteredData = tableData.filter((item) => {
+    const inputName = item.name
+      .toLowerCase()
+      .includes(activeInputElement.toLowerCase());
+    const serviceName = item.serviceName
+      .toLowerCase()
+      .includes(searchInput.toLowerCase());
+
+    return inputName || serviceName;
+  });
 
   return (
     <div className="dashboard-layout">
@@ -201,7 +223,12 @@ export default function DashboardPage() {
             <div className="table-filters">
               <div className="search-box">
                 <label>Search </label>
-                <input type="text" placeholder="Name or service..." />
+                <input
+                  type="text"
+                  placeholder="Name or service..."
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  onKeyDown={handleKetelemnt}
+                />
               </div>
               <div className="sort-box">
                 <label>Sort by date </label>
@@ -223,7 +250,7 @@ export default function DashboardPage() {
                 </tr>
               </thead>
               <tbody>
-                {tableData.map((row, index) => (
+                {filteredData.map((row, index) => (
                   <tr key={index}>
                     <td>{row.name}</td>
                     <td>{row.serviceName}</td>

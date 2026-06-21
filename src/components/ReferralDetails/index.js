@@ -39,8 +39,12 @@ export default function ReferralDetails() {
         const res = await response.json();
 
         if (response.ok) {
-          setReferralDetails(res.data.referrals[0]);
-          console.log(res.data.referrals[0]);
+          // 🔄 CHANGED: Check if referrals array exists and has at least one item
+          if (res.data && res.data.referrals && res.data.referrals.length > 0) {
+            setReferralDetails(res.data.referrals[0]);
+          } else {
+            setReferralDetails(null); // Explicitly set to null if ID doesn't exist on backend
+          }
         }
       } catch (error) {
         console.log(error);

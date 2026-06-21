@@ -9,6 +9,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+.error-msg-class {
+  color: red;
+}
 
 .login-card {
   background-color: #ffffff;

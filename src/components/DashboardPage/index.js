@@ -63,7 +63,7 @@ export default function DashboardPage() {
     if (jwtToken) {
       referralData();
     }
-  }, [jwtToken, activeInputElement, sortInput]);
+  }, [jwtToken, activeInputElement, sortInput, searchInput]);
 
   const onClickGoBussinessLogo = () => {
     navigate("/", { replace: true });
